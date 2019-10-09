@@ -4,7 +4,7 @@ const userService = new UserService();
 class userControllers {
     static async createAUser (ctx) {
         const { username, password } = ctx.request.body;
-        const res = await userService.createAUser( username, password );
+        const res = await userService.createUser( username, password );
         ctx.body = {
             status: "success",
             operation: "sign up",
@@ -15,7 +15,7 @@ class userControllers {
     static async loginAUser (ctx) {
         const username = ctx.query.usermane;
         const password = ctx.query.password;
-        const res = await userService.loginAUser( {username, password}, );
+        const res = await userService.loginUser( {username, password}, );
         ctx.body = {
             status: "success",
             operation: "log in",
@@ -27,7 +27,7 @@ class userControllers {
         const username = ctx.query.usermane;
         const password = ctx.query.password;
         const body = ctx.request.body;
-        const res= await userService.updateAUser({ username, password }, body);
+        const res= await userService.updateUser({ username, password }, body);
         ctx.body = {
             status: "success",
             operation: "update a user",
@@ -38,7 +38,7 @@ class userControllers {
     static async deleteAUser (ctx) {
         const username = ctx.query.username;
         const password = ctx.query.password;
-        const res = await userService.deleteAUser({ username, password }, );
+        const res = await userService.deleteUser({ username, password }, );
         ctx.body = {
             status: "success",
             operation: "delete a user",

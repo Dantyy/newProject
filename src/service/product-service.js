@@ -2,7 +2,7 @@ const productModel = require('../schemas/product-schemas');
 
 class productService {
     async createAProduct ( body ) {
-        const res = await productModel.create(body);
+        const res = await productModel.create( body );
         return res;
     }
 
