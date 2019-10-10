@@ -2,7 +2,7 @@ const CardService = require('../service/card-service');
 const cardService = new CardService();
 
 class cardControllers {
-    static async creatACard (ctx) {
+    async createACard (ctx) {
         const body = ctx.request.body;
         const res = cardService.creatACard(body);
         ctx.body = {
@@ -12,7 +12,7 @@ class cardControllers {
         }
     }
 
-    static async findACard (ctx) {
+    async findACard (ctx) {
         const retailername = ctx.query.retailername;
         const productname = ctx.query.productname;
         const res = cardService.findACard({ retailername, productname }, );
@@ -23,7 +23,7 @@ class cardControllers {
         }
     }
 
-    static async updateACard (ctx) {
+    async updateACard (ctx) {
         const retailername = ctx.query.retailername;
         const productname = ctx.query.productname;
         const body = ctx.request.body;
@@ -35,7 +35,7 @@ class cardControllers {
         }
     }
 
-    static async deleteACard (ctx) {
+    async deleteACard (ctx) {
         const retailername = ctx.query.retailername;
         const productname = ctx.query.productname;
         const res = cardService.deleteACard({ retailername, productname }, );
@@ -47,4 +47,4 @@ class cardControllers {
     }
 }
 
-module.exports = cardControllers();
+module.exports = cardControllers;

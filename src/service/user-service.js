@@ -1,8 +1,8 @@
 const userModule = require('../schemas/user-schemas');
 
 class userService {
-    async createUser ( username, password ) {
-        const res = await userModule.create( username, password );
+    async createUser ( body ) {
+        const res = await userModule.create( body );
         return res;
     }
 
@@ -22,4 +22,4 @@ class userService {
     }
 }
 
-module.exports = userService();
+module.exports = userService;

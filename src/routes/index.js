@@ -18,10 +18,12 @@ router.del('api/user/delete', userControllers.deleteAUser);
 router.get('api/product/find', productControllers.findAProduct);
 router.post('api/product/add', productControllers.createAProduct);
 router.put('api/product/update', productControllers.updateAProduct);
-router.del('api/product/delete', productControllers.deleteAProduuct);
+router.del('api/product/delete', productControllers.deleteAProduct);
 
 //card
 router.get('api/card/find', cardControllers.findACard);
 router.post('api/card/add', cardControllers.createACard);
 router.put('api/card/update', cardControllers.updateACard);
 router.del('api/card/delete', cardControllers.deleteACard);
+
+module.exports = router;

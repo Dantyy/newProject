@@ -22,4 +22,4 @@ class cardService {
     }
 }
 
-module.exports = cardService();
+module.exports = cardService;

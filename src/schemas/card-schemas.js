@@ -10,4 +10,4 @@ const cardSchemas = new mongoose.Schema({
 
 const cardModel = mongoose.model('card', cardSchemas, 'card');
 
-module.exports = cardModel();
+module.exports = cardModel;

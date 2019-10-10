@@ -22,4 +22,4 @@ class productService {
     }
 }
 
-module.exports = productService();
+module.exports = productService;

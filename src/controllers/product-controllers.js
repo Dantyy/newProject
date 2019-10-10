@@ -2,7 +2,7 @@ const ProductService = require('../service/product-service');
 const productService = new ProductService();
 
 class productControllers {
-    static async createAProduct (ctx) {
+    async createAProduct (ctx) {
         const body = ctx.request.body;
         const res = await productService.createAProduct(body);
         ctx.body = {
@@ -12,7 +12,7 @@ class productControllers {
         }
     }
 
-    static async findAProduct (ctx) {
+    async findAProduct (ctx) {
         const retailername = ctx.query.retailername;
         const productname = ctx.query.productname;
         const res = await productService.findAProduct({ retailername, productname }, );
@@ -23,7 +23,7 @@ class productControllers {
         }
     }
 
-    static async updateAProduct (ctx) {
+    async updateAProduct (ctx) {
         const retailername = ctx.query.retailername;
         const productname = ctx.query.productname;
         const body = ctx.request.body;
@@ -35,7 +35,7 @@ class productControllers {
         } 
     }
 
-    static async deleteAProduct (ctx) {
+    async deleteAProduct (ctx) {
         const retailername = ctx.query.retailername;
         const productname = ctx.query.productname;
         const  body = await productService.deleteAProduct({ retailername, productname }, );
@@ -47,4 +47,4 @@ class productControllers {
     }
 }
 
-module.exports = productControllers();
+module.exports = productControllers;

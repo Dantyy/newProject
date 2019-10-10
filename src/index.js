@@ -1,6 +1,6 @@
 const Koa = require('koa');
 const bodyParser = require('koa-bodyParser');
-const router = require('./routes/index');
+const router = require('./routes');
 const mongoose = require('mongoose');
 const { mongoConfig, port } = require('./config');
 
