@@ -7,6 +7,6 @@ const mongoConfig = {
 };
 
 module.exports = {
-    port,
-    mongoConfig
+    mongoConfig,
+    port
 };
