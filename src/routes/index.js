@@ -15,15 +15,15 @@ router.put('api/user/update', userControllers.updateAUser);
 router.del('api/user/delete', userControllers.deleteAUser);
 
 //product
-router.get('api/product/find', productControllers.findAProduct);
-router.post('api/product/add', productControllers.createAProduct);
-router.put('api/product/update', productControllers.updateAProduct);
-router.del('api/product/delete', productControllers.deleteAProduct);
+router.get('api/product/find/:userId', productControllers.getUserId, productControllers.findAProduct);
+router.post('api/product/add/:userId', productControllers.getUserId, productControllers.createAProduct);
+router.put('api/product/update/:userId', productControllers.getUserId, productControllers.updateAProduct);
+router.del('api/product/delete/:userId', productControllers.getUserId, productControllers.deleteAProduct);
 
 //card
-router.get('api/card/find', cardControllers.findACard);
-router.post('api/card/add', cardControllers.createACard);
-router.put('api/card/update', cardControllers.updateACard);
-router.del('api/card/delete', cardControllers.deleteACard);
+router.get('api/card/find/:getUserId', cardControllers.getUserId, cardControllers.findACard);
+router.post('api/card/add/:getUserId', cardControllers.getUserId, cardControllers.createACard);
+router.put('api/card/update/:getUserId', cardControllers.getUserId, cardControllers.updateACard);
+router.del('api/card/delete/:getUserId', cardControllers.getUserId, cardControllers.deleteACard);
 
 module.exports = router;

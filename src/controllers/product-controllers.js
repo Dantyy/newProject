@@ -2,6 +2,11 @@ const ProductService = require('../service/product-service');
 const productService = new ProductService();
 
 class productControllers {
+    async getUserId (ctx) {
+        const userId = ctx.params.userId;
+        return userId
+    }
+
     async createAProduct (ctx) {
         const body = ctx.request.body;
         const res = await productService.createAProduct(body);
