@@ -16,6 +16,7 @@ class userControllers {
         const username = ctx.query.usermane;
         const password = ctx.query.password;
         const res = await userService.loginUser({username, password}, );
+        console.log(res);
         ctx.body = {
             status: "success",
             operation: "log in",

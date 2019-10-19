@@ -7,8 +7,8 @@ class userService {
     }
 
     async loginUser ( username, password ) {
-        return await userModule.findOne({ username, password }, );
-        // console.log(res);
+        const res = await userModule.findOne({ username, password }, ).exec();
+        return res;
     }
 
     async updateUser ( username, password, body ) {
