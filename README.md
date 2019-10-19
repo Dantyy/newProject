@@ -9,8 +9,8 @@ This project is for Danty to practise.
 ### Visual Studio Code
 This is the first option for development, the development environment doesn't need to the pre-configuration, after cloned from git, it should be all set.
 Please install the necessary extensions of VS code as following:
-- TSLint
-- TypeScript Toolbox
+- 
+- 
 - vscode-icons (only suggestion, this would help the pair programming because it make the IDE style consistent)
 - Git Blame (help to trace the change)
 
