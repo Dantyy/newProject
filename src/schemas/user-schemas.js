@@ -10,12 +10,14 @@ const userSchema = new mongoose.Schema({
     country: String,
     userUuid: String,
     id: String,
-    isHiddenProducts: String,
-    isPrivate: String,
+    isHiddenProducts: Boolean,
+    isPrivate: Boolean,
     retailers:{
+        retailername: String,
         account: Number
     },
     products:{
+        productname: String,
         account: Number,
         totalPrice: String
     }

@@ -7,46 +7,46 @@ class productControllers {
         return userId
     }
 
-    async createAProduct (ctx) {
+    async createProduct (ctx) {
         const body = ctx.request.body;
-        const res = await productService.createAProduct(body);
+        const res = await productService.createProduct(body);
         ctx.body = {
             status: "success",
-            operation: "create a product",
+            operation: "create product",
             res
         }
     }
 
-    async findAProduct (ctx) {
+    async findProduct (ctx) {
         const retailername = ctx.query.retailername;
         const productname = ctx.query.productname;
-        const res = await productService.findAProduct({ retailername, productname }, );
+        const res = await productService.findProduct({ retailername, productname }, );
         ctx.body = {
             status: "success",
-            operation: "find a product",
+            operation: "find product",
             res
         }
     }
 
-    async updateAProduct (ctx) {
+    async updateProduct (ctx) {
         const retailername = ctx.query.retailername;
         const productname = ctx.query.productname;
         const body = ctx.request.body;
-        const res = await productService.updateAProduct({ retailername, productname }, body );
+        const res = await productService.updateProduct({ retailername, productname }, body );
         ctx.body = {
             status: "success",
-            operation: "update a product",
+            operation: "update product",
             res
         } 
     }
 
-    async deleteAProduct (ctx) {
+    async deleteProduct (ctx) {
         const retailername = ctx.query.retailername;
         const productname = ctx.query.productname;
-        const  body = await productService.deleteAProduct({ retailername, productname }, );
+        const  body = await productService.deleteProduct({ retailername, productname }, );
         ctx.body = {
             status: "success",
-            operation: "delete a product",
+            operation: "delete product",
             res
         }
     }

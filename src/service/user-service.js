@@ -2,13 +2,13 @@ const userModule = require('../schemas/user-schemas');
 
 class userService {
     async createUser ( body ) {
-        const res = await userModule.create( {body}, );
+        const res = await userModule.create( body );
         return res;
     }
 
     async loginUser ( username, password ) {
-        const res = await userModule.findOne({ username, password }, );
-        return res;
+        return await userModule.findOne({ username, password }, );
+        // console.log(res);
     }
 
     async updateUser ( username, password, body ) {

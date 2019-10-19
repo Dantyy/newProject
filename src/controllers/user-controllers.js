@@ -2,7 +2,7 @@ const UserService = require ('../service/user-service');
 const userService = new UserService();
 
 class userControllers {
-    async createAUser (ctx) {
+    async createUser (ctx) {
         const body = ctx.request.body;
         const res = await userService.createUser( body );
         ctx.body = {
@@ -12,10 +12,10 @@ class userControllers {
         }
     }
     
-    async loginAUser (ctx) {
+    async loginUser (ctx) {
         const username = ctx.query.usermane;
         const password = ctx.query.password;
-        const res = await userService.loginUser( {username, password}, );
+        const res = await userService.loginUser({username, password}, );
         ctx.body = {
             status: "success",
             operation: "log in",
@@ -23,25 +23,25 @@ class userControllers {
         }
     }
 
-    async updateAUser (ctx) {
+    async updateUser (ctx) {
         const username = ctx.query.usermane;
         const password = ctx.query.password;
         const body = ctx.request.body;
         const res= await userService.updateUser({ username, password }, body);
         ctx.body = {
             status: "success",
-            operation: "update a user",
+            operation: "update user",
             res
         }
     }
 
-    async deleteAUser (ctx) {
+    async deleteUser (ctx) {
         const username = ctx.query.username;
         const password = ctx.query.password;
         const res = await userService.deleteUser({ username, password }, );
         ctx.body = {
             status: "success",
-            operation: "delete a user",
+            operation: "delete user",
             res
         }
     }

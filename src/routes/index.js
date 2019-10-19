@@ -9,21 +9,21 @@ const productControllers = new ProductControllers();
 const cardControllers = new CardControllers();
 
 //user
-router.get('api/user/login', userControllers.loginAUser);
-router.post('api/user/signup', userControllers.createAUser);
-router.put('api/user/update', userControllers.updateAUser);
-router.del('api/user/delete', userControllers.deleteAUser);
+router.get('/api/user/login/', userControllers.loginUser);
+router.post('/api/user/signup/', userControllers.createUser);
+router.put('/api/user/update/', userControllers.updateUser);
+router.del('/api/user/delete/', userControllers.deleteUser);
 
 //product
-router.get('api/product/find/:userId', productControllers.getUserId, productControllers.findAProduct);
-router.post('api/product/add/:userId', productControllers.getUserId, productControllers.createAProduct);
-router.put('api/product/update/:userId', productControllers.getUserId, productControllers.updateAProduct);
-router.del('api/product/delete/:userId', productControllers.getUserId, productControllers.deleteAProduct);
+router.get('/api/product/find/:userId', productControllers.getUserId, productControllers.findProduct);
+router.post('/api/product/add/:userId', productControllers.getUserId, productControllers.createProduct);
+router.put('/api/product/update/:userId', productControllers.getUserId, productControllers.updateProduct);
+router.del('/api/product/delete/:userId', productControllers.getUserId, productControllers.deleteProduct);
 
 //card
-router.get('api/card/find/:getUserId', cardControllers.getUserId, cardControllers.findACard);
-router.post('api/card/add/:getUserId', cardControllers.getUserId, cardControllers.createACard);
-router.put('api/card/update/:getUserId', cardControllers.getUserId, cardControllers.updateACard);
-router.del('api/card/delete/:getUserId', cardControllers.getUserId, cardControllers.deleteACard);
+router.get('/api/card/find/:userId', cardControllers.getUserId, cardControllers.findCard);
+router.post('/api/card/add/:userId', cardControllers.getUserId, cardControllers.createCard);
+router.put('/api/card/update/:userId', cardControllers.getUserId, cardControllers.updateCard);
+router.del('/api/card/delete/:userId', cardControllers.getUserId, cardControllers.deleteCard);
 
 module.exports = router;

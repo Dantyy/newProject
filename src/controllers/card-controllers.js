@@ -7,46 +7,46 @@ class cardControllers {
         return userId;
     }
 
-    async createACard (ctx) {
+    async createCard (ctx) {
         const body = ctx.request.body;
-        const res = cardService.creatACard(body);
+        const res = cardService.creatCard(body);
         ctx.body = {
             status: "success",
-            operation: "creat a card",
+            operation: "creat card",
             res
         }
     }
 
-    async findACard (ctx) {
+    async findCard (ctx) {
         const retailername = ctx.query.retailername;
         const productname = ctx.query.productname;
-        const res = cardService.findACard({ retailername, productname }, );
+        const res = cardService.findCard({ retailername, productname }, );
         ctx.body = {
             status: "success",
-            operation: "find a card",
+            operation: "find card",
             res
         }
     }
 
-    async updateACard (ctx) {
+    async updateCard (ctx) {
         const retailername = ctx.query.retailername;
         const productname = ctx.query.productname;
         const body = ctx.request.body;
-        const res = cardService.updateACard({ retailername, productname }, body);
+        const res = cardService.updateCard({ retailername, productname }, body);
         ctx.body = {
             status: "success",
-            operation: "update a card",
+            operation: "update card",
             res
         }
     }
 
-    async deleteACard (ctx) {
+    async deleteCard (ctx) {
         const retailername = ctx.query.retailername;
         const productname = ctx.query.productname;
-        const res = cardService.deleteACard({ retailername, productname }, );
+        const res = cardService.deleteCard({ retailername, productname }, );
         ctx.body = {
             status: "success",
-            operation: "delete a card",
+            operation: "delete card",
             res
         }
     }
