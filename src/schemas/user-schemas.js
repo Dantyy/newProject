@@ -12,15 +12,8 @@ const userSchema = new mongoose.Schema({
     id: String,
     isHiddenProducts: Boolean,
     isPrivate: Boolean,
-    retailers:{
-        retailername: String,
-        account: Number
-    },
-    products:{
-        productname: String,
-        account: Number,
-        totalPrice: String
-    }
+    retailername: String,
+    productname: String,
 })
 
 const userModule = mongoose.model( 'user', userSchema, 'user' );

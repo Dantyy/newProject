@@ -20,7 +20,7 @@ class cardControllers {
     async findCard (ctx) {
         const retailername = ctx.query.retailername;
         const productname = ctx.query.productname;
-        const res = cardService.findCard({ retailername, productname }, );
+        const res = cardService.findCard( retailername, productname );
         ctx.body = {
             status: "success",
             operation: "find card",
@@ -32,7 +32,7 @@ class cardControllers {
         const retailername = ctx.query.retailername;
         const productname = ctx.query.productname;
         const body = ctx.request.body;
-        const res = cardService.updateCard({ retailername, productname }, body);
+        const res = cardService.updateCard( retailername, productname, body);
         ctx.body = {
             status: "success",
             operation: "update card",
@@ -43,7 +43,7 @@ class cardControllers {
     async deleteCard (ctx) {
         const retailername = ctx.query.retailername;
         const productname = ctx.query.productname;
-        const res = cardService.deleteCard({ retailername, productname }, );
+        const res = cardService.deleteCard( retailername, productname );
         ctx.body = {
             status: "success",
             operation: "delete card",

@@ -15,10 +15,10 @@ router.put('/api/user/update/', userControllers.updateUser);
 router.del('/api/user/delete/', userControllers.deleteUser);
 
 //product
-router.get('/api/product/find/:userId', productControllers.getUserId, productControllers.findProduct);
-router.post('/api/product/add/:userId', productControllers.getUserId, productControllers.createProduct);
-router.put('/api/product/update/:userId', productControllers.getUserId, productControllers.updateProduct);
-router.del('/api/product/delete/:userId', productControllers.getUserId, productControllers.deleteProduct);
+router.get('/api/product/find/:id', productControllers.getUserId, productControllers.findProduct);
+router.post('/api/product/add/:id', productControllers.getUserId, productControllers.createProduct);
+router.put('/api/product/update/:id', productControllers.getUserId, productControllers.updateProduct);
+router.del('/api/product/delete/:id', productControllers.getUserId, productControllers.deleteProduct);
 
 //card
 router.get('/api/card/find/:userId', cardControllers.getUserId, cardControllers.findCard);

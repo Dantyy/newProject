@@ -3,8 +3,8 @@ const mongoose = require('mongoose');
 const productSchema = new mongoose.Schema({
     username: String,
     password: String,
-    retaierName: String,
-    productName: String,
+    retaiername: String,
+    productname: String,
     onePrice: Number,
     amount: Number,
     totalPrice: Number
