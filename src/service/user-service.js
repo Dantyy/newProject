@@ -6,18 +6,18 @@ class userService {
         return res;
     }
 
-    async loginUser ( username, password ) {
-        const res = await userModule.findOne({ username, password }, ).exec();
+    async loginUser ( email, password ) {
+        const res = await userModule.findOne({ email, password }, );
         return res;
     }
 
-    async updateUser ( username, password, body ) {
-        const res = await userModule.findOneAndUpdate({ username, password }, body);
+    async updateUser ( email, password, body ) {
+        const res = await userModule.findOneAndUpdate({ email, password }, body);
         return res;
     }
     
-    async deleteUser( username, password ) {
-        const res = await userModule.findOneAndDelete({ username, password }, );
+    async deleteUser( email, password ) {
+        const res = await userModule.findOneAndDelete({ email, password }, );
         return res;
     }
 }
