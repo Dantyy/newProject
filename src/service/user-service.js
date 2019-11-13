@@ -12,7 +12,7 @@ class userService {
     }
 
     async updateUser ( email, password, body ) {
-        const res = await userModule.findOneAndUpdate({ email, password }, body);
+        const res = await userModule.findOneAndUpdate({ email, password }, {body});
         return res;
     }
     

@@ -15,15 +15,55 @@ router.put('/api/user/update/', userControllers.updateUser);
 router.del('/api/user/delete/', userControllers.deleteUser);
 
 //product
-router.get('/api/product/find/:id', productControllers.getUserId, productControllers.findProduct);
-router.post('/api/product/add/:id', productControllers.getUserId, productControllers.createProduct);
-router.put('/api/product/update/:id', productControllers.getUserId, productControllers.updateProduct);
-router.del('/api/product/delete/:id', productControllers.getUserId, productControllers.deleteProduct);
+router.get(
+    '/api/product/find/:id', 
+    (ctx) => {
+        productControllers.getUserId
+        productControllers.findProduct
+    });
+router.post(
+    '/api/product/add/:id', 
+    (ctx)=>{
+        productControllers.getUserId
+        productControllers.createProduct
+    });
+router.put(
+    '/api/product/update/:id', 
+    (ctx)=>{
+        productControllers.getUserId
+        productControllers.updateProduct
+    });
+router.del(
+    '/api/product/delete/:id', 
+    (ctx)=>{
+        productControllers.getUserId
+        productControllers.deleteProduct
+    });
 
 //card
-router.get('/api/card/find/:userId', cardControllers.getUserId, cardControllers.findCard);
-router.post('/api/card/add/:userId', cardControllers.getUserId, cardControllers.createCard);
-router.put('/api/card/update/:userId', cardControllers.getUserId, cardControllers.updateCard);
-router.del('/api/card/delete/:userId', cardControllers.getUserId, cardControllers.deleteCard);
+router.get(
+    '/api/card/find/:userId',
+    (ctx)=>{
+        cardControllers.getUserId
+        cardControllers.findCard
+    });
+router.post(
+    '/api/card/add/:userId',
+    (ctx)=>{
+        cardControllers.getUserId
+        cardControllers.createCard
+    });
+router.put(
+    '/api/card/update/:userId',
+    (ctx)=>{
+        cardControllers.getUserId
+        cardControllers.updateCard
+    });
+router.del(
+    '/api/card/delete/:userId',
+    (ctx)=>{
+        cardControllers.getUserId
+        cardControllers.deleteCard
+    });
 
 module.exports = router;

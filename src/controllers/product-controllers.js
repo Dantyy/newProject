@@ -2,18 +2,20 @@ const ProductService = require('../service/product-service');
 const productService = new ProductService();
 
 class productControllers {
-    getUserId (ctx) {
+    async getUserId (ctx) {
+        console.log("getUserId");
         const id = ctx.params.id;
-        console.log(id);
         return id;
     }
 
     async createProduct (ctx) {
+        console.log("createProduct")
         const body = ctx.request.body;
         const res = await productService.createProduct(body);
         ctx.body = {
             status: "success",
             operation: "create product",
+            getUserId,
             res
         }
     }
@@ -21,12 +23,11 @@ class productControllers {
     async findProduct (ctx) {
         const retailername = ctx.query.retailername;
         const productname = ctx.query.productname;
-        console.log([retailername,productname]);
         const res = await productService.findProduct( retailername, productname );
-        console.log(res);
         ctx.body = {
             status: "success",
             operation: "find product",
+            getUserId,
             res
         }
     }
