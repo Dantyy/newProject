@@ -8,6 +8,15 @@ const userControllers = new UserControllers();
 const productControllers = new ProductControllers();
 const cardControllers = new CardControllers();
 
+const CartController = require('../controllers/cart-controller');
+
+// 举例：
+// 用户会将产品放进自己的购物车，所以应该有一个放进购物车接口
+// 步骤：
+// 验证用户是否你的用户（在用户列表中）
+// 将产品id与用户id关联并创建一条记录在购物车表中
+router.post('/api/cart/create', CartController.createCartProduct);
+
 //user
 router.get('/api/user/login/', userControllers.loginUser);
 router.post('/api/user/signup/', userControllers.createUser);
