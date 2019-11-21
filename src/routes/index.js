@@ -16,54 +16,22 @@ router.del('/api/user/delete/', userControllers.deleteUser);
 
 //product
 router.get(
-    '/api/product/find/:id', 
-    (ctx) => {
-        productControllers.getUserId
-        productControllers.findProduct
-    });
+    '/api/product/find/:id', );
 router.post(
-    '/api/product/add/:id', 
-    (ctx)=>{
-        productControllers.getUserId
-        productControllers.createProduct
-    });
+    '/api/product/add/:id', );
 router.put(
-    '/api/product/update/:id', 
-    (ctx)=>{
-        productControllers.getUserId
-        productControllers.updateProduct
-    });
+    '/api/product/update/:id', );
 router.del(
-    '/api/product/delete/:id', 
-    (ctx)=>{
-        productControllers.getUserId
-        productControllers.deleteProduct
-    });
+    '/api/product/delete/:id', );
 
 //card
 router.get(
-    '/api/card/find/:userId',
-    (ctx)=>{
-        cardControllers.getUserId
-        cardControllers.findCard
-    });
+    '/api/card/find/:userId',);
 router.post(
-    '/api/card/add/:userId',
-    (ctx)=>{
-        cardControllers.getUserId
-        cardControllers.createCard
-    });
+    '/api/card/add/:userId',);
 router.put(
-    '/api/card/update/:userId',
-    (ctx)=>{
-        cardControllers.getUserId
-        cardControllers.updateCard
-    });
+    '/api/card/update/:userId',);
 router.del(
-    '/api/card/delete/:userId',
-    (ctx)=>{
-        cardControllers.getUserId
-        cardControllers.deleteCard
-    });
+    '/api/card/delete/:userId',);
 
 module.exports = router;

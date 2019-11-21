@@ -13,8 +13,8 @@ class userControllers {
     }
     
     async loginUser (ctx) {
-        const email = ctx.query.email;
-        const password = ctx.query.password;
+        const email = ctx.request.body.email;
+        const password = ctx.request.body.password;
         const res = await userService.loginUser( email, password );
         ctx.body = {
             status: "success",
@@ -24,10 +24,12 @@ class userControllers {
     }
 
     async updateUser (ctx) {
-        const email = ctx.query.email;
-        const password = ctx.query.password;
-        const body = ctx.request.body;
-        const res= await userService.updateUser( email, password , body );
+        const email = ctx.request.body.email;
+        const password = ctx.request.body.password;
+        const firstName = ctx.request.body.firstName;
+        const lastName = ctx.request.body.lastName;
+        const res = await userService.updateUser( email, password, firstName, lastName );
+        console.log(email, password, firstName, lastName, res);
         ctx.body = {
             status: "success",
             operation: "update user",
@@ -36,9 +38,8 @@ class userControllers {
     }
 
     async deleteUser (ctx) {
-        const email = ctx.query.email;
-        const password = ctx.query.password;
-        const res = await userService.deleteUser( email, password );
+        const id = ctx.request.body._id;
+        const res = await userService.deleteUser( id );
         ctx.body = {
             status: "success",
             operation: "delete user",
