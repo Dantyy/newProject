@@ -2,14 +2,10 @@ const CardService = require('../service/card-service');
 const cardService = new CardService();
 
 class cardControllers {
-    async getUserId (ctx) {
-        const userId = ctx.params.uerId;
-        return userId;
-    }
 
     async createCard (ctx) {
         const body = ctx.request.body;
-        const res = cardService.creatCard(body);
+        const res = cardService.createCard(body);
         ctx.body = {
             status: "success",
             operation: "creat card",

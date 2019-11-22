@@ -15,23 +15,15 @@ router.put('/api/user/update/', userControllers.updateUser);
 router.del('/api/user/delete/', userControllers.deleteUser);
 
 //product
-router.get(
-    '/api/product/find/:id', );
-router.post(
-    '/api/product/add/:id', );
-router.put(
-    '/api/product/update/:id', );
-router.del(
-    '/api/product/delete/:id', );
+router.get('/api/product/find/', productControllers.findProduct);
+router.post('/api/product/add/', productControllers.createProduct);
+router.put('/api/product/update/', productControllers.updateProduct);
+router.del('/api/product/delete/', productControllers.deleteProduct);
 
 //card
-router.get(
-    '/api/card/find/:userId',);
-router.post(
-    '/api/card/add/:userId',);
-router.put(
-    '/api/card/update/:userId',);
-router.del(
-    '/api/card/delete/:userId',);
+router.get('/api/card/find/', cardControllers.findCard);
+router.post('/api/card/add/', cardControllers.createCard);
+router.put('/api/card/update/', cardControllers.updateCard);
+router.del('/api/card/delete/', cardControllers.deleteCard);
 
 module.exports = router;

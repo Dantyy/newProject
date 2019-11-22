@@ -8,12 +8,14 @@ const userSchema = new mongoose.Schema({
     zip: Number,
     city: String,
     country: String,
-    userUuid: String,
     id: String,
     isHiddenProducts: Boolean,
     isPrivate: Boolean,
-    retailername: String,
-    productname: String,
+    product:{
+        retaiername: String,
+        productname: String,
+        price: Number
+    }
 })
 
 const userModule = mongoose.model( 'user', userSchema, 'user' );

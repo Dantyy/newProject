@@ -11,7 +11,10 @@ class userService {
     }
 
     async loginUser ( email, password ) {
-        const res = await userModule.findOne({email: email, password: password});
+        const res = await userModule.find({email: email, password: password});
+        if ( res.length === 0 ) {
+            throw new Error('This is not our system user.');
+        }
         return res;
     }
 

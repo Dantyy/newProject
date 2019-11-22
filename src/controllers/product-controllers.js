@@ -2,41 +2,34 @@ const ProductService = require('../service/product-service');
 const productService = new ProductService();
 
 class productControllers {
-    async getUserId (ctx) {
-        console.log("getUserId");
-        const id = ctx.params.id;
-        return id;
-    }
 
     async createProduct (ctx) {
-        console.log("createProduct")
-        const body = ctx.request.body;
-        const res = await productService.createProduct(body);
+        const email = ctx.request.body.email;
+        const password = ctx.request.body.password;
+        const product = ctx.request.body.product;
+        const res = await productService.createProduct( email, password, product );
         ctx.body = {
             status: "success",
             operation: "create product",
-            getUserId,
             res
         }
     }
 
     async findProduct (ctx) {
-        const retailername = ctx.query.retailername;
-        const productname = ctx.query.productname;
+        const retailername = ctx.request.body.retailername;
+        const productname = ctx.request.body.productname;
         const res = await productService.findProduct( retailername, productname );
         ctx.body = {
             status: "success",
             operation: "find product",
-            getUserId,
             res
         }
     }
 
     async updateProduct (ctx) {
-        const retailername = ctx.query.retailername;
-        const productname = ctx.query.productname;
-        const body = ctx.request.body;
-        const res = await productService.updateProduct( retailername, productname, body );
+        const id = ctx.request.body.id;
+        const product = ctx.request.body.product;
+        const res = await productService.updateProduct( id, product );
         ctx.body = {
             status: "success",
             operation: "update product",
@@ -45,9 +38,8 @@ class productControllers {
     }
 
     async deleteProduct (ctx) {
-        const retailername = ctx.query.retailername;
-        const productname = ctx.query.productname;
-        const  body = await productService.deleteProduct( retailername, productname );
+        const id = ctx.request.body.id;
+        const res = await productService.deleteProduct( id );
         ctx.body = {
             status: "success",
             operation: "delete product",
