@@ -19,6 +19,7 @@ router.get('/api/product/find/', productControllers.findProduct);
 router.post('/api/product/add/', productControllers.createProduct);
 router.put('/api/product/update/', productControllers.updateProduct);
 router.del('/api/product/delete/', productControllers.deleteProduct);
+router.get('/api/productlist/find/', );
 
 //card
 router.get('/api/card/find/', cardControllers.findCard);

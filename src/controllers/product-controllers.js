@@ -6,7 +6,12 @@ class productControllers {
     async createProduct (ctx) {
         const email = ctx.request.body.email;
         const password = ctx.request.body.password;
-        const product = ctx.request.body.product;
+        const retailername = ctx.request.body.product.retailername;
+        const productname = ctx.request.body.product.productname;
+        const price = ctx.request.body.product.price;
+        const number = ctx.request.body.product.number;
+        const total = ctx.request.body.product.total;
+        const product = {retailername, productname, price, number, total}
         const res = await productService.createProduct( email, password, product );
         ctx.body = {
             status: "success",
@@ -16,9 +21,10 @@ class productControllers {
     }
 
     async findProduct (ctx) {
-        const retailername = ctx.request.body.retailername;
-        const productname = ctx.request.body.productname;
-        const res = await productService.findProduct( retailername, productname );
+        const email = ctx.request.body.email;
+        const retailername = ctx.request.body.product.retailername;
+        const productname = ctx.request.body.product.productname;
+        const res = await productService.findProduct( email, retailername, productname );
         ctx.body = {
             status: "success",
             operation: "find product",
@@ -27,9 +33,14 @@ class productControllers {
     }
 
     async updateProduct (ctx) {
-        const id = ctx.request.body.id;
-        const product = ctx.request.body.product;
-        const res = await productService.updateProduct( id, product );
+        const productId = ctx.request.body.productId;
+        const retailername = ctx.request.body.product.retailername;
+        const productname = ctx.request.body.product.productname;
+        const price = ctx.request.body.product.price;
+        const number = ctx.request.body.product.number;
+        const total = ctx.request.body.product.total;
+        const product = {retailername, productname, price, number, total}
+        const res = await productService.updateProduct( productId, product );
         ctx.body = {
             status: "success",
             operation: "update product",
@@ -38,8 +49,8 @@ class productControllers {
     }
 
     async deleteProduct (ctx) {
-        const id = ctx.request.body.id;
-        const res = await productService.deleteProduct( id );
+        const productId = ctx.request.body.productId;
+        const res = await productService.deleteProduct( productId );
         ctx.body = {
             status: "success",
             operation: "delete product",

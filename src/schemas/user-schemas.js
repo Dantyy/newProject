@@ -10,12 +10,7 @@ const userSchema = new mongoose.Schema({
     country: String,
     id: String,
     isHiddenProducts: Boolean,
-    isPrivate: Boolean,
-    product:{
-        retaiername: String,
-        productname: String,
-        price: Number
-    }
+    isPrivate: Boolean
 })
 
 const userModule = mongoose.model( 'user', userSchema, 'user' );

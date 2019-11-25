@@ -1,12 +1,14 @@
 const mongoose = require('mongoose');
 
 const productSchema = new mongoose.Schema({
-    username: String,
+    email: String,
     password: String,
     product:{
-        retaiername: String,
+        retailername: String,
         productname: String,
-        price: Number
+        price: Number,
+        number: Number,
+        total: Number
     }
 });
 
