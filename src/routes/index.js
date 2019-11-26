@@ -4,9 +4,11 @@ const router = new Router();
 const UserControllers = require('../controllers/user-controllers');
 const ProductControllers = require('../controllers/product-controllers');
 const CardControllers = require('../controllers/card-controllers');
+const ProductListControllers = require('../controllers/productList-controllers');
 const userControllers = new UserControllers();
 const productControllers = new ProductControllers();
 const cardControllers = new CardControllers();
+const productListControllers = new ProductListControllers();
 
 //user
 router.get('/api/user/login/', userControllers.loginUser);
@@ -19,7 +21,7 @@ router.get('/api/product/find/', productControllers.findProduct);
 router.post('/api/product/add/', productControllers.createProduct);
 router.put('/api/product/update/', productControllers.updateProduct);
 router.del('/api/product/delete/', productControllers.deleteProduct);
-router.get('/api/productlist/find/', );
+router.get('/api/productlist/find/', productListControllers.findProductList);
 
 //card
 router.get('/api/card/find/', cardControllers.findCard);
