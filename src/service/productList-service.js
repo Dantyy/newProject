@@ -1,10 +1,8 @@
-const productModule = require('../schemas/product-schemas');
-const mongoose = require('mongoose');
+const productModel = require('../schemas/product-schemas');
 
 class productListService {
-    async findProductList( name, password ){
-        const res = productModule.find({ name: name, password: password });
-        console.log(res);
+    async findProductList( email, password ){
+        const res = productModel.find({ email: email, password: password }, {projection:{_id:1, email:1, password:1, product:1}});
         return res
     }
 }
