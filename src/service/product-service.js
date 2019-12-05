@@ -8,7 +8,9 @@ class productService {
         if (res.length === 0){
             throw new Error('Cannot create the product, because failed to log in your account ')
         }
-        return res;
+        else {
+            return res;
+        }
     }
 
     async findProduct ( email, retailername, productname ) {
@@ -16,24 +18,29 @@ class productService {
         if (res.length === 0){
             throw new Error('Cannot find your product.')
         }
-        return res;
+        else {
+            return res;
+        }
     }
 
     async updateProduct ( productId, product ) {
-        const res = await productModel.updateOne({ _id: mongoose.Types.ObjectId(productId) }, {$set: {product}} );
+        const res = await productModel.update({ _id: mongoose.Types.ObjectId(productId) }, {$set: {product}} );
         if (res.length === 0){
             throw new Error('Cannot find your product, failed to update')
         }
-        return res;
+        else {
+            return res;
+        }
     }
 
     async deleteProduct ( productId ) {
-        const res = await productModel.deleteOne({ _id: mongoose.Types.ObjectId(productId) })
+        const res = await productModel.delete({ _id: mongoose.Types.ObjectId(productId) })
         if( res.length ===0 ){
-            throw new Error('cannot find the product id.')      //seems not work.
+            throw new Error('cannot find the product id.')
         }
-        console.log(res);
-        return res;
+        else {
+            return res;
+        }
     }
 }
 

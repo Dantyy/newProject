@@ -3,11 +3,11 @@ const router = new Router();
 
 const UserControllers = require('../controllers/user-controllers');
 const ProductControllers = require('../controllers/product-controllers');
-const CardControllers = require('../controllers/card-controllers');
+const CartControllers = require('../controllers/cart-controllers');
 const ProductListControllers = require('../controllers/productList-controllers');
 const userControllers = new UserControllers();
 const productControllers = new ProductControllers();
-const cardControllers = new CardControllers();
+const cartControllers = new CartControllers();
 const productListControllers = new ProductListControllers();
 
 //user
@@ -23,10 +23,10 @@ router.put('/api/product/update/', productControllers.updateProduct);
 router.del('/api/product/delete/', productControllers.deleteProduct);
 router.get('/api/productlist/find/', productListControllers.findProductList);
 
-//card
-router.get('/api/card/find/', cardControllers.findCard);
-router.post('/api/card/add/', cardControllers.createCard);
-router.put('/api/card/update/', cardControllers.updateCard);
-router.del('/api/card/delete/', cardControllers.deleteCard);
+//cart
+router.get('/api/cart/find/', cartControllers.findCart);
+router.post('/api/cart/add/', cartControllers.createCart);
+router.put('/api/cart/update/', cartControllers.updateCart);
+router.del('/api/cart/delete/', cartControllers.deleteCart);
 
 module.exports = router;

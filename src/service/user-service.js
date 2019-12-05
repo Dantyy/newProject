@@ -7,7 +7,9 @@ class userService {
         if ( res.length === 0 ){
             throw new Error('Please enter email and password.')
         }
-        return res;
+        else {
+            return res;
+        }
     }
 
     async loginUser ( email, password ) {
@@ -15,7 +17,9 @@ class userService {
         if ( res.length === 0 ) {
             throw new Error('This is not our system user.');
         }
-        return res;
+        else {
+            return res;
+        }
     }
 
     async updateUser ( email, password, firstName, lastName ) {
@@ -23,7 +27,9 @@ class userService {
         if ( res.length === 0 ) {
             throw new Error('This is not our system user.');
         }
-        return res;
+        else {
+            return res;
+        }
     }
     
     async deleteUser( id ) {
@@ -31,7 +37,9 @@ class userService {
         if ( res.length === 0 ) {
             throw new Error('Failed to delete');
         }
-        return res;
+        else {
+            return res;
+        }
     }
 }
 
