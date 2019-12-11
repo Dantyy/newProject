@@ -24,16 +24,16 @@ class cartControllers {
         }
     }
 
-    async updateCart (ctx) {
-        const product_id = ctx.request.body.product_id;
-        const number = ctx.request.body.number;
-        const res = cartService.updateCart( product_id, number );
-        ctx.body = {
-            status: "success",
-            operation: "update cart",
-            res
-        }
-    }
+    // async updateCart (ctx) {
+    //     const product_id = ctx.request.body.product_id;
+    //     const number = ctx.request.body.number;
+    //     const res = cartService.updateCart( product_id, number );
+    //     ctx.body = {
+    //         status: "success",
+    //         operation: "update cart",
+    //         res
+    //     }
+    // }
 
     async deleteCart (ctx) {
         const _id = ctx.request.body._id;

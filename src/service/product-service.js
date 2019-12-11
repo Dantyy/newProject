@@ -3,8 +3,9 @@ const mongoose = require('mongoose');
 
 class productService {
 
-    async createProduct ( email, password, product ) {
-        const res = await productModel.create({ email: email, password: password, product: product });
+    async createProduct ( user_id, product_id, product ) {
+        const res = await productModel.create({ user_id: user_id, product_id: product_id, product: product });
+        console.log("res"+res);
         if (res.length === 0){
             throw new Error('Cannot create the product, because failed to log in your account ')
         }

@@ -26,7 +26,7 @@ router.get('/api/productlist/find/', productListControllers.findProductList);
 //cart
 router.get('/api/cart/find/', cartControllers.findCart);
 router.post('/api/cart/add/', cartControllers.createCart);
-router.put('/api/cart/update/', cartControllers.updateCart);
+// router.put('/api/cart/update/', cartControllers.updateCart);
 router.del('/api/cart/delete/', cartControllers.deleteCart);
 
 module.exports = router;

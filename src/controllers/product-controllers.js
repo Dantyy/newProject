@@ -4,15 +4,10 @@ const productService = new ProductService();
 class productControllers {
 
     async createProduct (ctx) {
-        const email = ctx.request.body.email;
-        const password = ctx.request.body.password;
-        const retailername = ctx.request.body.product.retailername;
-        const productname = ctx.request.body.product.productname;
-        const price = ctx.request.body.product.price;
-        const number = ctx.request.body.product.number;
-        const total = ctx.request.body.product.total;
-        const product = {retailername, productname, price, number, total}
-        const res = await productService.createProduct( email, password, product );
+        const user_id = ctx.request.body.user_id;
+        const product_id = ctx.request.body.product_id;
+        const product = ctx.request.body.product;
+        const res = await productService.createProduct( user_id, product_id, product );
         ctx.body = {
             status: "success",
             operation: "create product",
